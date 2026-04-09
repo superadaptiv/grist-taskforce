@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="de">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -744,7 +744,7 @@
             const start = getViewStartDate();
             let text = '';
             switch (currentView) {
-                case 'week': text = 'S' + getWeekNumber(start) + ' · ' + formatDateShort(start) + ' - ' + formatDateShort(addDays(start, 6)); break;
+                case 'week': text = 'KW' + getWeekNumber(start) + ' · ' + formatDateShort(start) + ' - ' + formatDateShort(addDays(start, 6)); break;
                 case 'month': text = MONTHS[start.getMonth()] + ' ' + start.getFullYear(); break;
                 case 'quarter': text = 'T' + (Math.floor(start.getMonth() / 3) + 1) + ' ' + start.getFullYear(); break;
                 case 'semester': text = 'S' + (Math.floor(start.getMonth() / 6) + 1) + ' ' + start.getFullYear(); break;

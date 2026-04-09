@@ -462,7 +462,7 @@
     </div>
 
     <div class="tooltip" id="tooltip"></div>
-    <div class="save-indicator" id="saveIndicator">Enregistré</div>
+    <div class="save-indicator" id="saveIndicator">Gespeichert</div>
     <div class="toast-container" id="toastContainer"></div>
 
     <script>
@@ -470,13 +470,13 @@
         // CONFIGURATION
         // ═══════════════════════════════════════════════════════════════════════
         const VIEW_CONFIG = {
-            week:     { label: 'Semaine',   unit: 'day',   days: 7,    cellWidth: 70, navStep: 7 },
-            month:    { label: 'Mois',      unit: 'day',   days: 42,   cellWidth: 34, navStep: 'month' },
-            quarter:  { label: 'Trimestre', unit: 'week',  weeks: 13,  cellWidth: 60, navStep: 'quarter' },
-            semester: { label: 'Semestre',  unit: 'week',  weeks: 26,  cellWidth: 32, navStep: 'semester' },
-            year:     { label: 'Année',     unit: 'month', months: 12, cellWidth: 80, navStep: 'year' }
+            week:     { label: 'Woche',   unit: 'day',   days: 7,    cellWidth: 70, navStep: 7 },
+            month:    { label: 'Monat',      unit: 'day',   days: 42,   cellWidth: 34, navStep: 'month' },
+            quarter:  { label: 'Quartal', unit: 'week',  weeks: 13,  cellWidth: 60, navStep: 'quarter' },
+            semester: { label: 'Vierteljahr',  unit: 'week',  weeks: 26,  cellWidth: 32, navStep: 'semester' },
+            year:     { label: 'Jahr',     unit: 'month', months: 12, cellWidth: 80, navStep: 'year' }
         };
-        const PRIORITY_LABELS = { 1: 'Critique', 2: 'Haute', 3: 'Moyenne', 4: 'Basse' };
+        const PRIORITY_LABELS = { 1: 'Kritisch', 2: 'Hoch', 3: 'Normal', 4: 'Niedrig' };
         
         // Configuration des champs affichés dans le tooltip (personnalisable)
         const TOOLTIP_FIELDS = [
@@ -487,10 +487,10 @@
             { key: 'assignees', label: 'Assignés', format: (t) => { const a = getAssigneesArray(t); return a.length ? a.map(id => getTeamMemberName(id)).filter(Boolean).join(', ') : null; } }
         ];
         const PRIORITY_COLORS = { 1: '#ef4444', 2: '#f59e0b', 3: '#3b82f6', 4: '#64748b' };
-        const STATUS_LABELS = { todo: 'À faire', inprogress: 'En cours', review: 'En revue', done: 'Terminé' };
+        const STATUS_LABELS = { todo: 'Zu erledigen', inprogress: 'In Bearbeitung', review: 'Review', done: 'Erledigt' };
         const TYPE_ICONS = { tache: '', jalon: '◆', reunion: '' };
-        const MONTHS = ['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Août', 'Septembre', 'Octobre', 'Novembre', 'Décembre'];
-        const MONTHS_SHORT = ['Jan', 'Fév', 'Mar', 'Avr', 'Mai', 'Juin', 'Juil', 'Août', 'Sep', 'Oct', 'Nov', 'Déc'];
+        const MONTHS = ['Januar', 'Februar', 'März', 'April', 'Mai', 'Juni', 'Juli', 'August', 'September', 'Oktober', 'November', 'Dezember'];
+        const MONTHS_SHORT = ['Jan', 'Feb', 'Mär', 'Apr', 'Mai', 'Jun', 'Jul', 'Aug', 'Sep', 'Okt', 'Nov', 'Dez'];
 
         // ═══════════════════════════════════════════════════════════════════════
         // STATE

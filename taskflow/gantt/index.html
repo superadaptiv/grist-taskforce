@@ -393,43 +393,43 @@
         </div>
         <div class="header-center">
             <button class="btn btn-nav" onclick="navigate(-1)">◀</button>
-            <button class="btn" onclick="goToToday()">Aujourd'hui</button>
+            <button class="btn" onclick="goToToday()">Heute</button>
             <button class="btn" onclick="fitToTasks()" title="Ajuster la vue aux tâches">Ajuster</button>
             <button class="btn btn-nav" onclick="navigate(1)">▶</button>
             <span class="current-period" id="currentPeriod"></span>
             <div class="view-controls">
-                <button class="btn" data-view="week" onclick="setView('week')">Sem</button>
-                <button class="btn active" data-view="month" onclick="setView('month')">Mois</button>
-                <button class="btn" data-view="quarter" onclick="setView('quarter')">Trim</button>
-                <button class="btn" data-view="semester" onclick="setView('semester')">6M</button>
-                <button class="btn" data-view="year" onclick="setView('year')">An</button>
+                <button class="btn" data-view="week" onclick="setView('week')">Woche</button>
+                <button class="btn active" data-view="month" onclick="setView('month')">Monat</button>
+                <button class="btn" data-view="quarter" onclick="setView('quarter')">Quartal</button>
+                <button class="btn" data-view="semester" onclick="setView('semester')">Halbjahr</button>
+                <button class="btn" data-view="year" onclick="setView('year')">Jahr</button>
             </div>
         </div>
         <div class="header-right">
             <div class="filter-dropdown" id="filterProject">
-                <div class="filter-btn" onclick="toggleFilterMenu('filterProject')"><span id="filterProjectLabel">Projet ▾</span></div>
+                <div class="filter-btn" onclick="toggleFilterMenu('filterProject')"><span id="filterProjectLabel">Projekt ▾</span></div>
                 <div class="filter-menu" id="filterProjectMenu"></div>
             </div>
             <div class="filter-dropdown" id="filterAssignee">
-                <div class="filter-btn" onclick="toggleFilterMenu('filterAssignee')"><span id="filterAssigneeLabel">Assigné ▾</span></div>
+                <div class="filter-btn" onclick="toggleFilterMenu('filterAssignee')"><span id="filterAssigneeLabel">Zugewiesen ▾</span></div>
                 <div class="filter-menu" id="filterAssigneeMenu"></div>
             </div>
             <div class="active-filters" id="activeFilters"></div>
             <div class="filter-dropdown" id="exportDropdown">
-                <button class="btn" onclick="toggleFilterMenu('exportDropdown')"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg> Exporter ▾</button>
+                <button class="btn" onclick="toggleFilterMenu('exportDropdown')"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg> Export ▾</button>
                 <div class="filter-menu" id="exportDropdownMenu">
-                    <div class="filter-option" onclick="exportPrint()"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 6 2 18 2 18 9"></polyline><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg> Imprimer / PDF</div>
+                    <div class="filter-option" onclick="exportPrint()"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 6 2 18 2 18 9"></polyline><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg> Drucken / PDF</div>
                     <div class="filter-option" onclick="exportPNG()"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg> Image PNG</div>
                 </div>
             </div>
-            <button class="btn primary" onclick="openCreatePanel()">+ Tâche</button>
+            <button class="btn primary" onclick="openCreatePanel()">+ Aufgabe</button>
         </div>
     </div>
 
     <div class="main-content">
         <div class="gantt-wrapper" id="ganttWrapper">
             <div class="gantt-header">
-                <div class="task-list-header"><span>Tâches</span><span id="taskCount" style="font-size:0.7rem;color:var(--text-muted);">0</span></div>
+                <div class="task-list-header"><span>Aufgaben</span><span id="taskCount" style="font-size:0.7rem;color:var(--text-muted);">0</span></div>
                 <div class="timeline-header" id="timelineHeader">
                     <div class="timeline-header-scroll" id="timelineHeaderScroll">
                         <div class="timeline-header-months" id="monthsHeader"></div>
@@ -444,12 +444,12 @@
                 </div>
             </div>
             <div class="legend">
-                <div class="legend-item"><div class="legend-color" style="background:var(--danger)"></div>Critique</div>
-                <div class="legend-item"><div class="legend-color" style="background:var(--warning)"></div>Haute</div>
-                <div class="legend-item"><div class="legend-color" style="background:var(--info)"></div>Moyenne</div>
-                <div class="legend-item"><div class="legend-color" style="background:var(--text-muted)"></div>Basse</div>
+                <div class="legend-item"><div class="legend-color" style="background:var(--danger)"></div>Kritisch</div>
+                <div class="legend-item"><div class="legend-color" style="background:var(--warning)"></div>Hoch</div>
+                <div class="legend-item"><div class="legend-color" style="background:var(--info)"></div>Normal</div>
+                <div class="legend-item"><div class="legend-color" style="background:var(--text-muted)"></div>Niedrig</div>
                 <div class="legend-separator"></div>
-                <div class="legend-item"><div class="legend-milestone"></div>Jalon</div>
+                <div class="legend-item"><div class="legend-milestone"></div>Meilenstein</div>
             </div>
         </div>
 
